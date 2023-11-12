@@ -1,0 +1,45 @@
+sprites/nroom.png  <-- add
+
+22x26
+
+
+scaf 13			V
+table 12		V
+bed 47       	V - 42
+clock 41    	V
+bottle 10		V
+globus - last	V
+plant 28		V
+tv - 57			V
+
+sprites/ghost.gif
+
+__________________________________________________
+
+paste html, paste _script_ in test.html
+
+launch door_list() in console
+
+add exits to door(text) in text_bascs.js
+
+__________________________________________________
+
+html  => script order
+
+basic_test.css  => background
+
+basic_test.css  => remove body {}
+
+basic_test  => background
+
+add controls, css of them
+
+add onclick to controls
+
+WTF with doors??
+
+body background
+
+width of console
+
+remove color of walls and doors in css

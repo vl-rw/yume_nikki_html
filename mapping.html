@@ -1,0 +1,399 @@
+<html><head>
+
+<title>Mapping</title>
+
+<link rel="stylesheet" href="mapping_basics.css" >
+<link rel="stylesheet" href="mapping_objects.css" >
+<style>
+/*everything was removed to two files before */
+</style>
+</head><body>
+
+
+<div id="screen">
+	<div id="popup">
+		<textarea id="code_src"></textarea><br><br>
+		<button onclick="submit()">submit</button>
+	</div>
+</div>
+
+
+
+
+<div id="left_table">
+<details>
+<summary>PLAYER</summary>
+
+<div class="bt">
+<textarea id="player_src" class="source" placeholder="sprites/chosen.gif"></textarea>
+<button onclick="chosen_loader()">add player</button>
+
+</div>
+<div>_____________________</div><div>_____________________</div>
+
+<div class="bt">
+
+<textarea id="bck_img" class="source" placeholder="sprites/bck.png"></textarea>  
+<button onclick="load_bck(bck_img.value)" >add back</button>
+
+</div>
+
+<div>_____________________</div><div>_____________________</div>
+
+
+<div class="bt">
+
+<button onclick=" go_u()" class="push">up</button>
+<button onclick=" go_l()" class="push">left</button>
+<button onclick=" go_r()" class="push">right</button>
+<button onclick=" go_d()" class="push">down</button>
+
+</div>
+
+<div class="bt">
+
+<button onclick=" key_z()" class="push">Z</button>
+<button onclick=" key_x()" class="push">X</button>
+<button onclick=" key_c()" class="push">C</button>
+<button onclick=" key_v()" class="push">V</button>
+
+</div>
+
+</details>
+<!-- start sprite-adding module -->
+
+<details class="obj_scroll">
+<summary>OBJECTS</summary>
+<div>
+
+<input type="checkbox" value="" id="onDoor">
+<span>on door regime</span>
+</div>
+<div>
+<textarea id="sprite_1" class="source" placeholder="sprites/sprite_1.png"></textarea>  
+<input type="radio" name="sprites" value="1" checked=True onclick="sprite_source(this.value)" />
+<span>label 1</span>
+</div>
+<div>
+<textarea id="sprite_2" class="source" placeholder="sprites/sprite_2.png"></textarea>  
+<input type="radio" name="sprites" value="2" onclick="sprite_source(this.value)"/>
+<span>label 2</span>
+</div>
+<div>
+<textarea id="sprite_3" class="source" placeholder="sprites/sprite_3.png"></textarea>  
+<input type="radio" name="sprites" value="3" onclick="sprite_source(this.value)"/>
+<span>label 3</span>
+</div>
+<div>
+<textarea id="sprite_4" class="source" placeholder="sprites/sprite_4.png"></textarea>  
+<input type="radio" name="sprites" value="4" onclick="sprite_source(this.value)"/>
+<span>label 4</span>
+</div>
+<div>
+<textarea id="sprite_5" class="source" placeholder="sprites/sprite_5.png"></textarea>  
+<input type="radio" name="sprites" value="5" onclick="sprite_source(this.value)"/>
+<span>label 5</span>
+</div>
+<div>
+<textarea id="sprite_6" class="source" placeholder="sprites/sprite_6.png"></textarea>  
+<input type="radio" name="sprites" value="6" onclick="sprite_source(this.value)"/>
+<span>label 6</span>
+</div>
+<div>
+<textarea id="sprite_7" class="source" placeholder="sprites/sprite_7.png"></textarea>  
+<input type="radio" name="sprites" value="7" onclick="sprite_source(this.value)"/>
+<span>label 7</span>
+</div>
+<div>
+<textarea id="sprite_8" class="source" placeholder="sprites/sprite_8.png"></textarea>  
+<input type="radio" name="sprites" value="8" onclick="sprite_source(this.value)"/>
+<span>label 8</span>
+</div>
+<div>
+<textarea id="sprite_9" class="source" placeholder="sprites/sprite_9.png"></textarea>  
+<input type="radio" name="sprites" value="9" onclick="sprite_source(this.value)"/>
+<span>label 9</span>
+</div>
+<div>
+<textarea id="sprite_10" class="source" placeholder="sprites/sprite_10.png"></textarea>  
+<input type="radio" name="sprites" value="10" onclick="sprite_source(this.value)"/>
+<span>label 10</span>
+</div>
+<div>
+<textarea id="sprite_11" class="source" placeholder="sprites/sprite_11.png"></textarea>  
+<input type="radio" name="sprites" value="11" onclick="sprite_source(this.value)"/>
+<span>label 11</span>
+</div>
+<div>
+<textarea id="sprite_12" class="source" placeholder="sprites/sprite_12.png"></textarea>  
+<input type="radio" name="sprites" value="12" onclick="sprite_source(this.value)"/>
+<span>label 12</span>
+</div>
+<div>
+<textarea id="sprite_13" class="source" placeholder="sprites/sprite_13.png"></textarea>  
+<input type="radio" name="sprites" value="13" onclick="sprite_source(this.value)"/>
+<span>label 13</span>
+</div>
+<div>
+<textarea id="sprite_14" class="source" placeholder="sprites/ship.png"></textarea>  
+<input type="radio" name="sprites" value="14" onclick="sprite_source(this.value)"/>
+<span>label 14</span>
+</div>
+<div>
+<textarea id="sprite_15" class="source" placeholder="sprites/sprite_15.png"></textarea>  
+<input type="radio" name="sprites" value="15" onclick="sprite_source(this.value)"/>
+<span>label 15</span>
+</div>
+<div>
+<textarea id="sprite_16" class="source" placeholder="sprites/sprite_16.png"></textarea>  
+<input type="radio" name="sprites" value="16" onclick="sprite_source(this.value)"/>
+<span>label 16</span>
+</div>
+<div>
+<textarea id="sprite_17" class="source" placeholder="sprites/sprite_17.png"></textarea>  
+<input type="radio" name="sprites" value="17" onclick="sprite_source(this.value)"/>
+<span>label 17</span>
+</div>
+<div>
+<textarea id="sprite_18" class="source" placeholder="sprites/sprite_18.png"></textarea>  
+<input type="radio" name="sprites" value="18" onclick="sprite_source(this.value)"/>
+<span>label 18</span>
+</div>
+<div>
+<textarea id="sprite_19" class="source" placeholder="sprites/sprite_19.png"></textarea>  
+<input type="radio" name="sprites" value="19" onclick="sprite_source(this.value)"/>
+<span>label 19</span>
+</div>
+<div>
+<textarea id="sprite_20" class="source" placeholder="sprites/sprite_20.png"></textarea>  
+<input type="radio" name="sprites" value="20" onclick="sprite_source(this.value)"/>
+<span>label 20</span>
+</div>
+<div>
+<textarea id="sprite_21" class="source" placeholder="sprites/sprite_21.png"></textarea>  
+<input type="radio" name="sprites" value="21" onclick="sprite_source(this.value)"/>
+<span>label 21</span>
+</div>
+<div>
+<textarea id="sprite_22" class="source" placeholder="sprites/sprite_22.png"></textarea>  
+<input type="radio" name="sprites" value="22" onclick="sprite_source(this.value)"/>
+<span>label 22</span>
+</div>
+<div>
+<textarea id="sprite_23" class="source" placeholder="sprites/sprite_23.png"></textarea>  
+<input type="radio" name="sprites" value="23" onclick="sprite_source(this.value)"/>
+<span>label 23</span>
+</div>
+<div>
+<textarea id="sprite_24" class="source" placeholder="sprites/sprite_24.png"></textarea>  
+<input type="radio" name="sprites" value="24" onclick="sprite_source(this.value)"/>
+<span>label 24</span>
+</div>
+<div>
+<textarea id="sprite_25" class="source" placeholder="sprites/sprite_25.png"></textarea>  
+<input type="radio" name="sprites" value="25" onclick="sprite_source(this.value)"/>
+<span>label 25</span>
+</div>
+<div>
+<textarea id="sprite_26" class="source" placeholder="sprites/sprite_26.png"></textarea>  
+<input type="radio" name="sprites" value="26" onclick="sprite_source(this.value)"/>
+<span>label 26</span>
+</div>
+<div>
+<textarea id="sprite_27" class="source" placeholder="sprites/sprite_27.png"></textarea>  
+<input type="radio" name="sprites" value="27" onclick="sprite_source(this.value)"/>
+<span>label 27</span>
+</div>
+<div>
+<textarea id="sprite_28" class="source" placeholder="sprites/sprite_28.png"></textarea>  
+<input type="radio" name="sprites" value="28" onclick="sprite_source(this.value)"/>
+<span>label 28</span>
+</div>
+<div>
+<textarea id="sprite_29" class="source" placeholder="sprites/sprite_29.png"></textarea>  
+<input type="radio" name="sprites" value="29" onclick="sprite_source(this.value)"/>
+<span>label 29</span>
+</div>
+<div>
+<textarea id="sprite_30" class="source" placeholder="sprites/sprite_30.png"></textarea>  
+<input type="radio" name="sprites" value="30" onclick="sprite_source(this.value)"/>
+<span>label 30</span>
+</div>
+<div>
+<textarea id="sprite_31" class="source" placeholder="sprites/sprite_31.png"></textarea>  
+<input type="radio" name="sprites" value="31" onclick="sprite_source(this.value)"/>
+<span>label 31</span>
+</div>
+<div>
+<textarea id="sprite_32" class="source" placeholder="sprites/sprite_32.png"></textarea>  
+<input type="radio" name="sprites" value="32" onclick="sprite_source(this.value)"/>
+<span>label 32</span>
+</div>
+<div>
+<textarea id="sprite_33" class="source" placeholder="sprites/sprite_33.png"></textarea>  
+<input type="radio" name="sprites" value="33" onclick="sprite_source(this.value)"/>
+<span>label 33</span>
+</div>
+<div>
+<textarea id="sprite_34" class="source" placeholder="sprites/sprite_34.png"></textarea>  
+<input type="radio" name="sprites" value="34" onclick="sprite_source(this.value)"/>
+<span>label 34</span>
+</div>
+<div>
+<textarea id="sprite_35" class="source" placeholder="sprites/sprite_35.png"></textarea>  
+<input type="radio" name="sprites" value="35" onclick="sprite_source(this.value)"/>
+<span>label 35</span>
+</div>
+<div>
+<textarea id="sprite_36" class="source" placeholder="sprites/sprite_36.png"></textarea>  
+<input type="radio" name="sprites" value="36" onclick="sprite_source(this.value)"/>
+<span>label 36</span>
+</div>
+<div>
+<textarea id="sprite_37" class="source" placeholder="sprites/sprite_37.png"></textarea>  
+<input type="radio" name="sprites" value="37" onclick="sprite_source(this.value)"/>
+<span>label 37</span>
+</div>
+<div>
+<textarea id="sprite_38" class="source" placeholder="sprites/sprite_38.png"></textarea>  
+<input type="radio" name="sprites" value="38" onclick="sprite_source(this.value)"/>
+<span>label 38</span>
+</div>
+<div>
+<textarea id="sprite_39" class="source" placeholder="sprites/sprite_39.png"></textarea>  
+<input type="radio" name="sprites" value="39" onclick="sprite_source(this.value)"/>
+<span>label 39</span>
+</div>
+<div>
+<textarea id="sprite_40" class="source" placeholder="sprites/sprite_40.png"></textarea>  
+<input type="radio" name="sprites" value="40" onclick="sprite_source(this.value)"/>
+<span>label 40</span>
+</div>
+<div>
+<textarea id="sprite_41" class="source" placeholder="sprites/sprite_41.png"></textarea>  
+<input type="radio" name="sprites" value="41" onclick="sprite_source(this.value)"/>
+<span>label 41</span>
+</div>
+<div>
+<textarea id="sprite_42" class="source" placeholder="sprites/sprite_42.png"></textarea>  
+<input type="radio" name="sprites" value="42" onclick="sprite_source(this.value)"/>
+<span>label 42</span>
+</div>
+<div>
+<textarea id="sprite_43" class="source" placeholder="sprites/sprite_43.png"></textarea>  
+<input type="radio" name="sprites" value="43" onclick="sprite_source(this.value)"/>
+<span>label 43</span>
+</div>
+<div>
+<textarea id="sprite_44" class="source" placeholder="sprites/sprite_44.png"></textarea>  
+<input type="radio" name="sprites" value="44" onclick="sprite_source(this.value)"/>
+<span>label 44</span>
+</div>
+<div>
+<textarea id="sprite_45" class="source" placeholder="sprites/sprite_45.png"></textarea>  
+<input type="radio" name="sprites" value="45" onclick="sprite_source(this.value)"/>
+<span>label 45</span>
+</div>
+<div>
+<textarea id="sprite_46" class="source" placeholder="sprites/sprite_46.png"></textarea>  
+<input type="radio" name="sprites" value="46" onclick="sprite_source(this.value)"/>
+<span>label 46</span>
+</div>
+<div>
+<textarea id="sprite_47" class="source" placeholder="sprites/sprite_47.png"></textarea>  
+<input type="radio" name="sprites" value="47" onclick="sprite_source(this.value)"/>
+<span>label 47</span>
+</div>
+<div>
+<textarea id="sprite_48" class="source" placeholder="sprites/sprite_48.png"></textarea>  
+<input type="radio" name="sprites" value="48" onclick="sprite_source(this.value)"/>
+<span>label 48</span>
+</div>
+<div>
+<textarea id="sprite_49" class="source" placeholder="sprites/sprite_49.png"></textarea>  
+<input type="radio" name="sprites" value="49" onclick="sprite_source(this.value)"/>
+<span>label 49</span>
+</div>
+<div>
+<textarea id="sprite_50" class="source" placeholder="sprites/sprite_50.png"></textarea>  
+<input type="radio" name="sprites" value="50" onclick="sprite_source(this.value)"/>
+<span>label 50</span>
+</div>
+<div>
+<textarea id="sprite_51" class="source" placeholder="sprites/sprite_51.png"></textarea>  
+<input type="radio" name="sprites" value="51" onclick="sprite_source(this.value)"/>
+<span>label 51</span>
+</div>
+<div>
+<textarea id="sprite_52" class="source" placeholder="sprites/sprite_52.png"></textarea>  
+<input type="radio" name="sprites" value="52" onclick="sprite_source(this.value)"/>
+<span>label 52</span>
+</div>
+<div>
+<textarea id="sprite_53" class="source" placeholder="sprites/sprite_53.png"></textarea>  
+<input type="radio" name="sprites" value="53" onclick="sprite_source(this.value)"/>
+<span>label 53</span>
+</div>
+<div>
+<textarea id="sprite_54" class="source" placeholder="sprites/sprite_54.png"></textarea>  
+<input type="radio" name="sprites" value="54" onclick="sprite_source(this.value)"/>
+<span>label 54</span>
+</div>
+<div>
+<textarea id="sprite_55" class="source" placeholder="sprites/sprite_55.png"></textarea>  
+<input type="radio" name="sprites" value="55" onclick="sprite_source(this.value)"/>
+<span>label 55</span>
+</div>
+<div>
+<textarea id="sprite_56" class="source" placeholder="sprites/sprite_56.png"></textarea>  
+<input type="radio" name="sprites" value="56" onclick="sprite_source(this.value)"/>
+<span>label 56</span>
+</div>
+<div>
+<textarea id="sprite_57" class="source" placeholder="sprites/sprite_57.png"></textarea>  
+<input type="radio" name="sprites" value="57" onclick="sprite_source(this.value)"/>
+<span>label 57</span>
+</div>
+<div>
+<textarea id="sprite_58" class="source" placeholder="sprites/globe.png"></textarea>  
+<input type="radio" name="sprites" value="58" onclick="sprite_source(this.value)"/>
+<span>label 58</span>
+</div>
+
+</details>
+</div></div>
+
+</div>
+
+<div id="middle_table">
+
+<div id="container"></div>
+<div id="consol"></div>
+
+</div>
+
+
+
+
+<div id="right_table">
+
+<h2>EXPORT</h2>
+
+<div class="bt">
+<textarea id="exod" placeholder="code"></textarea><button onclick="copy()" class="push">export code</button>
+
+</div>
+
+
+
+
+</div>
+
+<script src="moving.js"></script>
+<script src="mapping_basics.js"></script>
+<script src="keys.js"></script>
+
+<script>
+
+</script>
+</body>

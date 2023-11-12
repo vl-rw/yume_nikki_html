@@ -1,0 +1,121 @@
+<html><head><style>
+body {
+	background-color: black;
+	margin: 100px;
+}
+#container {
+	padding: 20px;
+	border-radius: 10px;
+	width: 600px;
+	height: 600px;
+	background-color: grey;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+#text {
+	overflow-y: scroll;
+	height: 70%;
+}
+.input {
+	width: 48%;
+	height: 25px;
+	margin-top: 0;
+}
+</style></head><body>
+
+
+<div id="container">
+	
+	<h1>Field generator</h1>
+	
+	<div id="info">
+	
+		<textarea id="r" placeholder="height" class="input"></textarea>  
+		
+		<textarea id="c" placeholder="width" class="input"></textarea>
+		
+		<br>
+		
+		<button onclick=" read_v()" class="input">generate</button>
+		
+		<button onclick="goto()" class="input">go to mapping</button>
+	
+	</div>
+	
+	<br>
+	<br>
+	<br>
+	
+	<textarea id="text"></textarea>
+	
+</div>
+
+<script>
+function read_v() {
+
+	rows = parseInt(r.value);
+
+	cells = parseInt(c.value);
+
+	(rows && cells)? generate() : console.log( "Not a number")
+
+};
+
+let letters = '';
+
+function generate() {
+
+	console.log( rows + ' ' + cells);
+	
+	text.textContent += '{'+rows + ' - ' + cells + '}';
+	
+	letters = '';
+	
+	for (let i = 0; i < rows; i++ ) {
+	
+		letters += '</div>\n\n';
+	
+		letters += '<div class="row" style="z-index: ' + i + '">';
+	
+		for (let j = 0; j < cells; j++ ) {
+		
+			letters += `\n<div class="cell" id="${j}_${i}_block" onclick="pressed(this.id)"></div>\n`;
+		
+		};
+	
+	};
+	setTimeout( () => {
+	
+		text.textContent = letters.slice(6);
+		
+		text.textContent += "</div>"
+		
+		copy();
+		
+	}, 2000);
+
+};
+
+
+function copy() {
+
+  	let copyText = document.getElementById("text");
+
+  	copyText.select();
+  	copyText.setSelectionRange(0, 99999); // For mobile devices
+
+  	navigator.clipboard.writeText(copyText.value);
+
+	alert("Text was copied to clipboard");
+};
+
+function goto() {
+
+	window.open("mapping.html", "__self")
+
+};
+
+</script>
+
+</body>
